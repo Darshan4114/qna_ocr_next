@@ -1,35 +1,82 @@
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100vh;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
 .main {
   padding: 5rem 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+}
+
+.output {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.25em;
+  padding: 1em;
+  max-width: 50rem;
+  max-height: 30rem;
+  overflow: scroll;
+  width: 100%;
 }
 
 .footer {
   width: 100%;
   height: 100px;
   border-top: 1px solid #eaeaea;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .footer a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
@@ -70,9 +117,16 @@
 }
 
 .grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
@@ -86,6 +140,7 @@
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
+  -webkit-transition: color 0.15s ease, border-color 0.15s ease;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 45%;
 }
@@ -113,9 +168,182 @@
   margin-left: 0.5rem;
 }
 
+.fileInputContainer {
+  /* Note: Firefox flags the file name box as a *readonly* input. So that attribute selector was added below. Note: These selectors blow up in IE so have to be separated from the same styles above. */
+  /* IE UPLOAD BUTTON STYLE: This attempts to alter the file upload button style in IE.  Keep in mind IE gives you limited design control but at least you can customize its upload button.*/
+  /* FIREFOX UPLOAD BUTTON STYLE */
+  /* CHROME AND EDGE UPLOAD BUTTON STYLE */
+}
+
+.fileInputContainer input[type="submit"] {
+  background-color: #4caf50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0.25em;
+  width: 7rem;
+}
+
+.fileInputContainer input[type="file"],
+.fileInputContainer input[type="file"]:visited,
+.fileInputContainer input[type="file"]:hover,
+.fileInputContainer input[type="file"]:focus,
+.fileInputContainer input[type="file"]:active {
+  height: 3rem;
+  margin: 0 0.5em 1em 0;
+  padding: 0em 0em;
+  overflow: hidden;
+  /* long file names overflow so just hide the end */
+  background: #ffffff;
+  border-radius: 0.2em;
+  outline: none;
+  border: 2px solid #bbb;
+  cursor: pointer;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.fileInputContainer input[type="file"]:hover {
+  background: #f9f9ff;
+  /* I am using a light blue to indicate an interaction */
+  border: 2px solid #999;
+}
+
+.fileInputContainer input[type="file"]:visited,
+.fileInputContainer input[type="file"]:focus,
+.fileInputContainer input[type="file"]:active {
+  background: #fff;
+  /* Default back to white when focused. */
+  border: 2px solid #999;
+}
+
+.fileInputContainer input[type="file"]:disabled,
+.fileInputContainer input[type="file"]:-moz-read-only {
+  margin: 0;
+  padding: 0em 0em;
+  overflow: hidden;
+  /* long file names overflow so just hide the end */
+  background: #ffffff;
+  border-radius: 0.2em;
+  outline: none;
+  border: 2px solid #bbb;
+  cursor: pointer;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.fileInputContainer input[type="file"]:disabled,
+.fileInputContainer input[type="file"]:read-only {
+  margin: 0;
+  padding: 0em 0em;
+  overflow: hidden;
+  /* long file names overflow so just hide the end */
+  background: #ffffff;
+  border-radius: 0.2em;
+  outline: none;
+  border: 2px solid #bbb;
+  cursor: pointer;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.fileInputContainer input[type="file"]:disabled:hover,
+.fileInputContainer input[type="file"]:-moz-read-only:hover {
+  background: #f9f9ff;
+  /* I am using a light blue to indicate an interaction */
+  border: 2px solid #999;
+}
+
+.fileInputContainer input[type="file"]:disabled:hover,
+.fileInputContainer input[type="file"]:read-only:hover {
+  background: #f9f9ff;
+  /* I am using a light blue to indicate an interaction */
+  border: 2px solid #999;
+}
+
+.fileInputContainer input[type="file"]:disabled:visited,
+.fileInputContainer input[type="file"]:disabled:focus,
+.fileInputContainer input[type="file"]:disabled:active,
+.fileInputContainer input[type="file"]:-moz-read-only:visited,
+.fileInputContainer input[type="file"]:-moz-read-only:focus,
+.fileInputContainer input[type="file"]:-moz-read-only:active {
+  background: #fff;
+  /* Default back to white when focused. */
+  border: 2px solid #999;
+}
+
+.fileInputContainer input[type="file"]:disabled:visited,
+.fileInputContainer input[type="file"]:disabled:focus,
+.fileInputContainer input[type="file"]:disabled:active,
+.fileInputContainer input[type="file"]:read-only:visited,
+.fileInputContainer input[type="file"]:read-only:focus,
+.fileInputContainer input[type="file"]:read-only:active {
+  background: #fff;
+  /* Default back to white when focused. */
+  border: 2px solid #999;
+}
+
+.fileInputContainer ::-ms-browse {
+  /* IE */
+  display: inline-block;
+  margin: 0;
+  padding: 0.2em 0.5em;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  background: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.fileInputContainer ::file-selector-button {
+  /* firefox */
+  display: inline-block;
+  margin: 0rem 1rem 0rem 0rem;
+  padding: 0.18em 0.5em;
+  padding: 0.18rem 0.5rem;
+  -webkit-appearance: button;
+  text-align: center;
+  border-radius: 0.1rem 0rem 0rem 0.1rem;
+  outline: none;
+  border: none;
+  border-right: 2px solid #bbb;
+  background: #eee;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.fileInputContainer ::-webkit-file-upload-button {
+  /* chrome and edge */
+  display: inline-block;
+  height: 3rem;
+  margin: 0rem 1rem 0rem 0rem;
+  padding: 0.19em 0.5em;
+  padding: 0.19rem 0.5rem;
+  -webkit-appearance: button;
+  text-align: center;
+  border-radius: 0.1rem 0rem 0rem 0.1rem;
+  outline: none;
+  border: none;
+  border-right: 2px solid #bbb;
+  background: #eee;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }
+/*# sourceMappingURL=Home.module.css.map */
