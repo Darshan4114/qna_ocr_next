@@ -42,7 +42,12 @@ const Header = ({ home, changeActiveItem, nav }) => {
         >
           {navItems.map((navItem, idx) => {
             return (
-              <Tab className="tab" label={navItem.label} {...a11yProps(idx)} />
+              <Tab
+                key={idx}
+                className="tab"
+                label={navItem.label}
+                {...a11yProps(idx)}
+              />
             );
           })}
         </Tabs>
