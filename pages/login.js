@@ -85,7 +85,7 @@ const ResendVerificationMessage = ({ resendVerificationMail, email }) => {
     <div>
       Please verify your email address. Verification mail sent to {email}
       <p>
-        Didn't get the mail?
+        Didn&apos;t get the mail?
         <span>
           <button onClick={resendVerificationMail}> RESEND </button>
         </span>
@@ -186,7 +186,7 @@ export default function Login({ loginRedirectPath }) {
         </FormControl>
       </Form>
       <p style={{ textAlign: "center", marginBottom: "0.25em" }}>
-        Don't have an account{" "}
+        Don&apos;t have an account{" "}
         <span
           style={{ textDecoration: "underline", color: "var(--brand-color)" }}
         >

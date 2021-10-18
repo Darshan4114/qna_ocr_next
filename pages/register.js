@@ -33,7 +33,7 @@ export default function Register() {
   function onSubmit(data) {
     //Validating if passwords match
     if (data.password !== data.password2) {
-      toast.error("Passwords don't match", toastOptions);
+      toast.error("Passwords don&apos;t match", toastOptions);
       return;
     }
     //Creating user with given email and password

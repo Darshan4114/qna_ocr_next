@@ -75,7 +75,7 @@ export default function ForgotPassword() {
         </span>
       </p>
       <p style={{ textAlign: "center", marginBottom: "0.25em" }}>
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <span
           style={{ textDecoration: "underline", color: "var(--brand-color)" }}
         >
