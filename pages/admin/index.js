@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-import Nav from "../../components/Nav";
-import Header from "../../components/Header";
+import AdminNav from "../../components/AdminNav";
+import Logo from "../../components/Logo";
 export default function Admin() {
   return (
     <>
-      <Header />
+      <Logo />
 
       <Container>
         <h2>ADMIN</h2>
       </Container>
-      <Nav />
+      <AdminNav />
     </>
   );
 }

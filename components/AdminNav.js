@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import TabPanel from "../components/TabPanel";
+import TabPanel from "./TabPanel";
 
-export default function Nav() {
+export default function AdminNav() {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -14,19 +14,6 @@ export default function Nav() {
 
   return (
     <>
-      <TabPanel value={value} index={0}>
-        <h2>Exams</h2>
-        <Link href="/admin/create-exam">
-          <a>Create Exam</a>
-        </Link>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <h2>Users</h2>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <h2>Scores</h2>
-      </TabPanel>
-
       <Tabs
         value={value}
         centered
