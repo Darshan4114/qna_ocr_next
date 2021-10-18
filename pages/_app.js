@@ -5,7 +5,7 @@ import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import nProgress from "nprogress";
 
-// import AuthProvider from "../components/AuthProvider";
+import AuthProvider from "../components/AuthProvider";
 import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
@@ -26,22 +26,28 @@ function MyApp({ Component, pageProps }) {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-      {/* <AuthProvider> */}
-      <Component {...pageProps} />
-      <ToastContainer
-        position="bottom-center"
-        autoClose={1000}
-        hideProgressBar
-        transition={Slide}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      {/* </AuthProvider> */}
+      <AuthProvider>
+        <Component {...pageProps} />
+        <ToastContainer
+          position="bottom-center"
+          autoClose={1000}
+          hideProgressBar
+          transition={Slide}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </AuthProvider>
     </>
   );
 }

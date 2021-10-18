@@ -13,4 +13,13 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --theme-primary: #3297e0;
+  --theme-dark: #175b8d;
+  --theme-white: #fff;
+  --text-primary: #222;
+  --text-secondary: #444;
 }

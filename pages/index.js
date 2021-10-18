@@ -82,7 +82,7 @@ export default function Home() {
   }
   return (
     <div className={styles.container}>
-      <h1>My Hindi OCR</h1>
+      <h1>Create Exam</h1>
       <form action="" method="POST" onSubmit={handleSubmit}>
         <div className={styles.fileInputContainer}>
           <input
